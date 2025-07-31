@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Asignatura } from './Modelos/Asignatura';
 import OperacionesAritmeticas from './Components/OperacionesAritmeticas';
 import ListaAsignatura from './Components/ListaAsignatura';
+import CalculadoraEjercicios from './Components/CalculadoraEjercicios';
+import React from 'react';
 
 export default function App() {
 
@@ -11,29 +13,33 @@ export default function App() {
     numeroHoras: 3
   }
 
-
   function sumarNumeros(a: number, b: number): number {
     return a + b;
   }
 
   type operaciones = 'multiplicar' | 'Sumar' | 'Restar';
 
-  let operacion:operaciones='multiplicar'
-  return (
+  let operacion: operaciones = 'multiplicar';
+  
+  // Datos de ejercicio - ejemplo: [lunes, martes, miércoles, jueves, viernes, sábado, domingo]
+  let horasSemanales: number[] = [3, 0, 2, 4.5, 1, 2.5, 0];
+  let objetivoDiario: number = 2; // 2 horas por día como objetivo
 
+  return (
     <View style={styles.container}>
       <Text>Primera aplicacion en React Native</Text>
 
       <Text>Nombre Asignatura : {asignatura.nombreAsignatura}</Text>
-      <Text>Numero de  Hooras : {asignatura.numeroHoras}</Text>
+      <Text>Numero de Horas : {asignatura.numeroHoras}</Text>
       <Text>Resultado Suma: {sumarNumeros(3, 3)}</Text>
       
       <OperacionesAritmeticas a={5} b={10} tipoOperacion={operacion}></OperacionesAritmeticas>
 
       <ListaAsignatura></ListaAsignatura>
 
-    </View>
+      <CalculadoraEjercicios horasEjercicio={horasSemanales} objetivoDiario={objetivoDiario}></CalculadoraEjercicios>
 
+    </View>
   );
 }
 
@@ -45,5 +51,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
