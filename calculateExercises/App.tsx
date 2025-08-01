@@ -21,9 +21,9 @@ export default function App() {
 
   let operacion: operaciones = 'multiplicar';
   
-  // Datos de ejercicio - ejemplo: [lunes, martes, miércoles, jueves, viernes, sábado, domingo]
+  
   let horasSemanales: number[] = [3, 0, 2, 4.5, 1, 2.5, 0];
-  let objetivoDiario: number = 2; // 2 horas por día como objetivo
+  let objetivoDiario: number = 2; 
 
   return (
     <View style={styles.container}>

@@ -46,7 +46,7 @@ export default function CalculadoraEjercicios(props: Parametros) {
 
   return (
     <View>
-       <Text>--------------------------------------------------------------</Text>
+       <Text>-Ejercicio Tarea Hoy-</Text>
       <Text>.............................. Estadísticas de Ejercicio ..............................</Text>
       <Text>Días de la semana: {resultado.diasSemana}</Text>
       <Text>Días de entrenamiento: {resultado.diasEntrenamiento}</Text>
@@ -58,3 +58,4 @@ export default function CalculadoraEjercicios(props: Parametros) {
     </View>
   )
 }
+
